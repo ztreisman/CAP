@@ -232,3 +232,46 @@ ggplot(pivot_data, aes(x = datetime, y = temp_diff)) +
   labs(title = paste0("Temperature Difference between ", comps[1], " and ", comps[2]), 
        x = "Datetime", y = paste0("Temperature Difference ", comps[1], " - ", comps[2]))
 
+# Zoom out to hourly observations 
+hourly_data <- all_data %>%
+  mutate(datetime = floor_date(datetime, unit="hour")) %>%
+  group_by(datetime, location) %>%
+  summarise(temp = mean(temp),
+            rh = mean(rh),
+            dewpoint = mean(dewpoint))
+
+comps <- c("CAS", "BAL")
+subset_data <- all_data %>%
+  filter(location %in% comps) %>%
+  select(datetime, temp, location) %>%
+  mutate(datetime = floor_date(datetime, unit="hour"))
+
+# Pivot the data to have temperature values for each location in separate columns
+pivot_data <- subset_data %>%
+  pivot_wider(names_from = location, values_from = temp, values_fn = mean)
+
+# Calculate the temperature difference between the two locations
+pivot_data$temp_diff <- numeric(nrow(pivot_data))
+pivot_data[,"temp_diff"] <- pivot_data[,comps[1]] - pivot_data[,comps[2]]
+
+# Plot time series of temperature differences between locations 
+ggplot(pivot_data, aes(x = datetime, y = temp_diff)) +
+  geom_line() +
+  labs(title = paste0("Temperature Difference between ", comps[1], " and ", comps[2]), 
+       x = "Datetime", y = paste0("Temperature Difference ", comps[1], " - ", comps[2]))
+
+print(pivot_data[which(pivot_data$temp_diff < (-5)), c("datetime", "temp_diff")], n=60)
+
+hourly_data$CAPevent <- hourly_data$datetime %in% pivot_data[which(pivot_data$temp_diff < (-5)), ]$datetime
+
+
+# Exclude rows where both rh and dewpoint are NA
+rich_hourly <- hourly_data %>% filter(!(is.na(rh) & is.na(dewpoint)))
+CAPevents <- rich_hourly[rich_hourly$CAPevent,]
+
+# Plot relative humidity vs dewpoint with CAP events highlighted, faceted by location
+ggplot(rich_hourly, aes(rh, dewpoint)) +
+  geom_point(alpha=0.2) +
+  geom_point(data = CAPevents, aes(rh, dewpoint, color=CAPevent))+
+  facet_wrap(~ location) +
+  labs(title = "Relative Humidity vs Dewpoint by Location", x = "Relative Humidity", y = "Dewpoint")
