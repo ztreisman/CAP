@@ -1,0 +1,15 @@
+December 2023 dead sensors
+          Sensor    Data end	 Added days         Replacement         Days lost
+		                 due to restart     
+          01OBS     11/27        12/01-12/09        12/16               11
+          02FAI     12/02                           12/16               14
+          05VAN     10/31                           12/16               46
+          08CHI     11/26                           12/16               20
+          10NEM     11/26        12/01-12/10        12/15               10
+          12FAV     12/10                           12/15               05
+          14MIA     10/29        12/01-12/01        12/15               46
+          19ROC     11/27                           12/16               19
+          20LOS     12/10                           12/16               06
+          21ALM     11/26                           12/16               20
+          22CRA     10/14                           12/16               63
+          24CAM     11/27        12/01-12/16        12/16               04

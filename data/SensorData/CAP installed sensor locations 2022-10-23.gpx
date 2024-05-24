@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="National Geographic Maps TOPO! 4.x"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <metadata>
+        <bounds minlat="38.5094900131226" minlon="-107.0691699981690" maxlat="38.7748099565506" maxlon="-106.8019100427628"/>
+    </metadata>
+    <wpt lat="38.5558500289917" lon="-106.9383800029755">
+        <ele>2364.640</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>05VAN</name>
+        <desc>14-FEB-22 10:32:15AM</desc>
+    </wpt>
+    <wpt lat="38.5393699407578" lon="-106.9506900310516">
+        <ele>2346.960</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>25MEA</name>
+        <desc>14-FEB-22 11:03:29AM</desc>
+    </wpt>
+    <wpt lat="38.5408699512482" lon="-106.9067800045013">
+        <ele>2349.100</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>03IBA</name>
+        <desc>14-FEB-22 11:28:26AM</desc>
+    </wpt>
+    <wpt lat="38.6167000532150" lon="-106.9083700180054">
+        <ele>2401.220</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>18ALL</name>
+        <desc>14-FEB-22 12:00:30PM</desc>
+    </wpt>
+    <wpt lat="38.6007499694824" lon="-106.9421700239182">
+        <ele>2409.750</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>24CAM</name>
+        <desc>14-FEB-22 3:20:15PM</desc>
+    </wpt>
+    <wpt lat="38.5828200578690" lon="-106.9263299703598">
+        <ele>2368.910</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>08CHI</name>
+        <desc>14-FEB-22 3:36:16PM</desc>
+    </wpt>
+    <wpt lat="38.5406199693680" lon="-106.9284000396729">
+        <ele>2345.140</ele>
+        <time>2022-02-15T00:34:29Z</time>
+        <name>02FAI</name>
+        <desc>14-FEB-22 5:25:20PM</desc>
+    </wpt>
+    <wpt lat="38.6106599569321" lon="-106.8858900070190">
+        <ele>2410.360</ele>
+        <time>2022-02-15T19:37:48Z</time>
+        <name>19ROC</name>
+        <desc>15-FEB-22 12:00:45PM</desc>
+    </wpt>
+    <wpt lat="38.6428099870682" lon="-106.8656899929047">
+        <ele>2434.440</ele>
+        <time>2022-02-15T19:37:48Z</time>
+        <name>20LOS</name>
+        <desc>15-FEB-22 12:19:23PM</desc>
+    </wpt>
+    <wpt lat="38.6613399982452" lon="-106.8472299575806">
+        <ele>2452.430</ele>
+        <time>2022-02-15T19:37:48Z</time>
+        <name>21ALM</name>
+        <desc>15-FEB-22 12:34:05PM</desc>
+    </wpt>
+    <wpt lat="38.5928499698639" lon="-106.9262599945068">
+        <ele>2379.580</ele>
+        <time>2022-02-15T19:37:48Z</time>
+        <name>10NEM</name>
+        <desc>15-FEB-22 1:23:34PM</desc>
+    </wpt>
+    <wpt lat="38.6239000558853" lon="-106.9411300420761">
+        <ele>2409.140</ele>
+        <time>2022-02-15T19:48:19Z</time>
+        <name>11MAG</name>
+        <desc>15-FEB-22 12:20 PM</desc>
+    </wpt>
+    <wpt lat="38.5987700223923" lon="-106.8900699615479">
+        <ele>2391.770</ele>
+        <time>2022-02-16T00:00:24Z</time>
+        <name>22CRA</name>
+        <desc>15-FEB-22 3:28:24PM</desc>
+    </wpt>
+    <wpt lat="38.5094900131226" lon="-106.9399100542069">
+        <ele>2333.860</ele>
+        <time>2022-02-16T00:00:24Z</time>
+        <name>01OBS</name>
+        <desc>15-FEB-22 4:10:35PM</desc>
+    </wpt>
+    <wpt lat="38.5839999914169" lon="-106.9190100431442">
+        <ele>2373.790</ele>
+        <time>2022-02-16T00:00:24Z</time>
+        <name>06MYS</name>
+        <desc>15-FEB-22 4:35:09PM</desc>
+    </wpt>
+    <wpt lat="38.6750799417496" lon="-106.9837599992752">
+        <ele>2476.200</ele>
+        <time>2022-02-16T22:50:13Z</time>
+        <name>13EAG</name>
+        <desc>16-FEB-22 3:56:22PM</desc>
+    </wpt>
+    <wpt lat="38.6495499610901" lon="-106.9468499422073">
+        <ele>2447.550</ele>
+        <time>2022-02-16T22:50:13Z</time>
+        <name>12FAV</name>
+        <desc>16-FEB-22 3:22:11PM</desc>
+    </wpt>
+    <wpt lat="38.6013599634171" lon="-106.9043899774551">
+        <ele>2400.000</ele>
+        <time>2022-02-16T22:50:13Z</time>
+        <name>23TRA</name>
+        <desc>16-FEB-22 2:29:31PM</desc>
+    </wpt>
+    <wpt lat="38.5656000375748" lon="-106.9404300451279">
+        <ele>2354.280</ele>
+        <time>2022-02-17T22:54:24Z</time>
+        <name>07PAR</name>
+        <desc>17-FEB-22 4:00:46PM</desc>
+    </wpt>
+    <wpt lat="38.7581900358200" lon="-107.0493600368500">
+        <ele>2621.290</ele>
+        <time>2022-02-18T23:16:45Z</time>
+        <name>16BAL</name>
+        <desc>18-FEB-22 2:08:42PM</desc>
+    </wpt>
+    <wpt lat="38.7748099565506" lon="-107.0691699981690">
+        <ele>2665.480</ele>
+        <time>2022-02-18T23:16:45Z</time>
+        <name>17WIL</name>
+        <desc>18-FEB-22 2:34:09PM</desc>
+    </wpt>
+    <wpt lat="38.7361199855804" lon="-107.0318700075150">
+        <ele>2574.960</ele>
+        <time>2022-02-18T23:16:45Z</time>
+        <name>15CAS</name>
+        <desc>18-FEB-22 3:28:03PM</desc>
+    </wpt>
+    <wpt lat="38.7191699743271" lon="-106.9981600046158">
+        <ele>2584.100</ele>
+        <time>2022-02-18T23:16:45Z</time>
+        <name>09MIC</name>
+        <desc>18-FEB-22 4:11:30PM</desc>
+    </wpt>
+    <wpt lat="38.7023799419403" lon="-107.0002100467682">
+        <ele>2516.740</ele>
+        <time>2022-02-26T16:45:44Z</time>
+        <name>14MIA</name>
+        <desc>25-FEB-22 2:46:15PM</desc>
+    </wpt>
+    <wpt lat="38.7007600069046" lon="-107.0262600183487">
+        <ele>2580.140</ele>
+        <time>2022-02-26T16:45:44Z</time>
+        <name>04MIB</name>
+        <desc>25-FEB-22 4:45:00PM</desc>
+    </wpt>
+    <wpt lat="38.7167099714279" lon="-107.0055600404739">
+        <ele>2537.470</ele>
+        <time>2022-10-23T15:37:48Z</time>
+        <name>29CAB</name>
+        <desc>14-OCT-22 1:25:51PM</desc>
+    </wpt>
+    <wpt lat="38.5224200487137" lon="-106.8019100427628">
+        <ele>2402.440</ele>
+        <time>2022-10-23T15:37:48Z</time>
+        <name>27CHR</name>
+        <desc>13-OCT-22 5:06:19PM</desc>
+    </wpt>
+    <wpt lat="38.5859999656677" lon="-106.8919999599457">
+        <ele>2438.100</ele>
+        <time>2022-10-23T15:40:24Z</time>
+        <name>26CRB</name>
+        <desc>October 2022</desc>
+    </wpt>
+    <wpt lat="38.5401799678802" lon="-106.8554999828339">
+        <ele>2366.780</ele>
+        <time>2022-10-23T15:42:49Z</time>
+        <name>28TOM</name>
+        <desc>October 2022</desc>
+    </wpt>
+    <wpt lat="38.6876000165939" lon="-106.9903000593185">
+        <ele>2483.520</ele>
+        <time>2022-10-23T15:44:07Z</time>
+        <name>30HIN</name>
+        <desc>October 2022</desc>
+    </wpt>
+</gpx>

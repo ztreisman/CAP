@@ -1,0 +1,60 @@
+Failed to read file: data/SensorData/collections/2023-12-01/35WMT-1_past_90_days__2023_12_02_13_15_31_MST_1_fixed.csv 
+Failed to read file: data/SensorData/collections/2022-03-04/21ALM-1 2022-03-04 17_34_44 -0700.csv 
+Failed to read file: data/SensorData/collections/2022-04-09/05VAN-1 2022-04-09 10_51_33 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/06MYS-1 2022-04-09 11_04_14 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/19ROC-1 2022-04-09 11_10_35 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/20LOS-1 2022-04-09 11_22_20 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/21ALM-1 2022-04-09 11_35_33 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/22CRA-1 2022-04-09 11_14_02 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/23TRA-1 2022-04-09 11_45_52 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-04-09/25MEA-1 2022-04-09 10_41_57 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-06-08/01OBS-1 2022-06-08 20_46_07 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/01OBS-1 2022-08-07 15_54_54 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/07PAR-1 2022-08-09 14_21_19 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/19ROC-1 2022-08-07 11_09_29 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/20LOS-1 2022-08-08 14_22_59 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/21ALM-1 2022-08-08 16_12_01 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-08-07/22CRA-1 2022-08-07 11_04_42 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-10-08/19ROC-1 2022-10-09 15_03_26 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-10-08/22CRA-1 2022-10-09 15_06_18 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-10-08/23TRA-1 2022-10-09 14_58_50 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2022-10-08/25MEA-1 2022-10-09 14_35_43 MDT (Data MDT).csv 
+Failed to read file: data/SensorData/collections/2023-02-06/01OBS-1 2023-02-06 13_44_32 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-02-06/10NEM-1 2023-02-07 12_05_31 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-02-06/17WIL-1 2023-02-08 08_00_43 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-02-06/21ALM-1 2023-02-07 10_19_40 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-02-06/24CAM-1 2023-02-07 09_57_02 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-02-06/29CAB-1 2023-02-07 11_24_44 MST (Data MST)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/01OBS-1 2023-04-08 10_21_55 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/10NEM-1 2023-04-07 16_50_00 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/17WIL-1 2023-04-13 10_58_51 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/21ALM-1 2023-04-08 15_15_03 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/24CAM-1 2023-04-07 16_34_54 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-04-08/29CAB-1 2023-04-08 11_27_57 MDT (Data MDT)_RH-fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/02FAI-1 2023-06-01 16_32_04 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/03IBA-1 2023-06-01 09_26_48 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/04MIB-1 2023-06-02 08_38_58 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/05VAN-1 2023-06-01 15_55_47 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/06MYS-1 2023-06-01 10_50_48 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/07PAR-1 2023-06-01 15_33_44 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/08CHI-1 2023-06-02 09_47_12 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/09MIC-1 2023-06-02 08_28_38 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/11MAG-1 2023-06-02 09_10_22 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/12FAV-1 2023-06-02 07_23_51 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/13EAG-1 2023-06-02 08_56_54 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/14MIA-1 2023-06-02 08_44_39 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/15CAS-1 2023-06-02 08_18_49 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/16BAL-1 2023-06-02 08_12_14 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/18ALL-1 2023-06-02 09_17_52 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/19ROC-1 2023-06-01 12_08_06 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/20LOS-1 2023-06-01 11_40_37 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/22CRA-1 2023-06-01 12_11_58 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/23TRA-1 2023-06-01 11_25_46 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/25MEA-1 2023-06-01 16_07_39 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/26CRB-1 2023-06-01 12_19_18 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/27CHR-1 2023-06-01 09_40_02 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/28TOM-1 2023-06-01 09_50_29 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-06-01/30HIN-1 2023-06-02 08_50_58 MDT (Data MDT)_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-08-01/35WMT-1_past_90_days__2023_08_19_07_46_08_MDT_1_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-10-01/35WMT-1_past_90_days__2023_10_09_10_30_26_MDT_1_fixed.csv 
+Failed to read file: data/SensorData/collections/2023-12-01/35WMT-1_past_90_days__2023_12_02_13_15_31_MST_1_fixed.csv 
