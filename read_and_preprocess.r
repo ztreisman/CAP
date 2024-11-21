@@ -1,4 +1,5 @@
 library(lubridate)
+library(hms)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -131,6 +132,28 @@ read_and_preprocess <- function(file) {
   # Exclude rows without temperature data
   data <- data %>% filter(!is.na(temp))
   
+  # Create lagged temp values
+  
+  data <- data %>% arrange(datetime)
+  
+  data <- data %>%
+    mutate(
+      
+      temp_lag1 = lag(temp, 1),
+      temp_lag2 = lag(temp, 2),
+      temp_lag3 = lag(temp, 3),
+      temp_lag4 = lag(temp, 4),
+      temp_lag5 = lag(temp, 5),
+      temp_lag6 = lag(temp, 6),
+      temp_lag7 = lag(temp, 7),
+      temp_lag8 = lag(temp, 8),
+      temp_lag9 = lag(temp, 9),
+      temp_lag10 = lag(temp, 10),
+      temp_lag11 = lag(temp, 11),
+      temp_lag12 = lag(temp, 12),
+    
+    )
+  
   return(data)
 }
 
@@ -171,107 +194,183 @@ all_data <- month_dirs %>%
 # Remove duplicate rows in the combined data
 all_data <- all_data %>% distinct()
 
-
-
 # Inspect the combined data
 View(all_data)
 
+## define CAP events
+
+# select relevant sites
+
+comps <- c("MIA", "MIB", "CA")
+subset_data <- all_data %>%
+  filter(location %in% comps) %>%
+  select(datetime, temp, temp_lag1, temp_lag2, 
+         temp_lag3, temp_lag4, temp_lag5, 
+         temp_lag6, temp_lag7, temp_lag8, 
+         temp_lag9, temp_lag10, temp_lag11,
+         temp_lag12, location) %>%
+  mutate(datetime = floor_date(datetime, unit = "hour") + minutes(3 * (minute(datetime) %/% 3)))
+
+# Pivot the data to have temperature values for each location in separate columns
+pivot_data <- subset_data %>%
+  pivot_wider(id_cols = datetime, names_from = location, 
+              values_from = c(temp, temp_lag1, temp_lag2, 
+                              temp_lag3, temp_lag4, temp_lag5, 
+                              temp_lag6, temp_lag7, temp_lag8, 
+                              temp_lag9, temp_lag10, temp_lag11,
+                              temp_lag12), 
+              values_fn = mean)
+
+# Define CAP events
+
+pivot_data$CAPEvent2 <- (pivot_data$temp_MIB - pivot_data$temp_MIA > 2) & (pivot_data$temp_CAS - pivot_data$temp_MIA > 2) &
+  (pivot_data$temp_lag1_MIB - pivot_data$temp_lag1_MIA > 2) & (pivot_data$temp_lag1_CAS - pivot_data$temp_lag1_MIA > 2) &
+  (pivot_data$temp_lag2_MIB - pivot_data$temp_lag2_MIA > 2) & (pivot_data$temp_lag2_CAS - pivot_data$temp_lag2_MIA > 2) &
+  (pivot_data$temp_lag3_MIB - pivot_data$temp_lag3_MIA > 2) & (pivot_data$temp_lag3_CAS - pivot_data$temp_lag3_MIA > 2) &
+  (pivot_data$temp_lag4_MIB - pivot_data$temp_lag4_MIA > 2) & (pivot_data$temp_lag4_CAS - pivot_data$temp_lag4_MIA > 2) &
+  (pivot_data$temp_lag5_MIB - pivot_data$temp_lag5_MIA > 2) & (pivot_data$temp_lag5_CAS - pivot_data$temp_lag5_MIA > 2) &
+  (pivot_data$temp_lag6_MIB - pivot_data$temp_lag6_MIA > 2) & (pivot_data$temp_lag6_CAS - pivot_data$temp_lag6_MIA > 2) &
+  (pivot_data$temp_lag7_MIB - pivot_data$temp_lag7_MIA > 2) & (pivot_data$temp_lag7_CAS - pivot_data$temp_lag7_MIA > 2) &
+  (pivot_data$temp_lag8_MIB - pivot_data$temp_lag8_MIA > 2) & (pivot_data$temp_lag8_CAS - pivot_data$temp_lag8_MIA > 2) &
+  (pivot_data$temp_lag9_MIB - pivot_data$temp_lag9_MIA > 2) & (pivot_data$temp_lag9_CAS - pivot_data$temp_lag9_MIA > 2) &
+  (pivot_data$temp_lag10_MIB - pivot_data$temp_lag10_MIA > 2) & (pivot_data$temp_lag10_CAS - pivot_data$temp_lag10_MIA > 2)
+
+pivot_data$CAPEvent5 <- (pivot_data$temp_MIB - pivot_data$temp_MIA > 5) & (pivot_data$temp_CAS - pivot_data$temp_MIA > 5) &
+  (pivot_data$temp_lag1_MIB - pivot_data$temp_lag1_MIA > 5) & (pivot_data$temp_lag1_CAS - pivot_data$temp_lag1_MIA > 5) &
+  (pivot_data$temp_lag2_MIB - pivot_data$temp_lag2_MIA > 5) & (pivot_data$temp_lag2_CAS - pivot_data$temp_lag2_MIA > 5) &
+  (pivot_data$temp_lag3_MIB - pivot_data$temp_lag3_MIA > 5) & (pivot_data$temp_lag3_CAS - pivot_data$temp_lag3_MIA > 5) &
+  (pivot_data$temp_lag4_MIB - pivot_data$temp_lag4_MIA > 5) & (pivot_data$temp_lag4_CAS - pivot_data$temp_lag4_MIA > 5) &
+  (pivot_data$temp_lag5_MIB - pivot_data$temp_lag5_MIA > 5) & (pivot_data$temp_lag5_CAS - pivot_data$temp_lag5_MIA > 5) &
+  (pivot_data$temp_lag6_MIB - pivot_data$temp_lag6_MIA > 5) & (pivot_data$temp_lag6_CAS - pivot_data$temp_lag6_MIA > 5) &
+  (pivot_data$temp_lag7_MIB - pivot_data$temp_lag7_MIA > 5) & (pivot_data$temp_lag7_CAS - pivot_data$temp_lag7_MIA > 5) &
+  (pivot_data$temp_lag8_MIB - pivot_data$temp_lag8_MIA > 5) & (pivot_data$temp_lag8_CAS - pivot_data$temp_lag8_MIA > 5) &
+  (pivot_data$temp_lag9_MIB - pivot_data$temp_lag9_MIA > 5) & (pivot_data$temp_lag9_CAS - pivot_data$temp_lag9_MIA > 5) &
+  (pivot_data$temp_lag10_MIB - pivot_data$temp_lag10_MIA > 5) & (pivot_data$temp_lag10_CAS - pivot_data$temp_lag10_MIA > 5)
+
+# Make lists of all the times when CAP is happening
+
+CAPTimes2 <- unique(pivot_data[which(pivot_data$CAPEvent2 == TRUE), ]$datetime)
+CAPTimes5 <- unique(pivot_data[which(pivot_data$CAPEvent5 == TRUE), ]$datetime)
+
+# What time of year does CAP happen?
+
+hist(yday(CAPTimes2))
+hist(yday(CAPTimes5))
+
+# What time of day?
+
+plot(yday(CAPTimes2), as_hms(CAPTimes2))
+plot(yday(CAPTimes5), as_hms(CAPTimes5))
+
+# Add CAPEvents back in to all_data
+
+all_data$CAPEvent2 <- all_data$datetime %in% CAPTimes2
+all_data$CAPEvent5 <- all_data$datetime %in% CAPTimes5
+
 # Plot all locations
-ggplot(all_data, aes(datetime, temp)) +
+ggplot(all_data, aes(x=datetime, temp)) +
   geom_scattermore() +
   facet_wrap(~ location) +
   labs(title = "Temperature Over Time by Location", x = "Datetime", y = "Temperature")
 
 
 # Plot temperature over time, colored by location
-plot_locations <- c("WIL", "OBS", "ALM")
+plot_locations <- c("MIA", "CAS", "MIB")
+date_range <- mdy_hms(c("1/05/2023 00:00:00", "2/25/2023 00:00:00" ))
 plot_data <- all_data %>%
-  filter(location %in% plot_locations)
+  filter(location %in% plot_locations) %>%
+  filter(datetime>=date_range[1] & datetime<=date_range[2])
 
 location_plot <- ggplot(plot_data, aes(datetime, temp, color = location)) +
-  geom_scattermore() +
+  geom_line() +
   scale_color_brewer(palette = "Dark2") +
   labs(title = "Temperature Over Time by Location", x = "Datetime", y = "Temperature")
 
 location_plot
+location_plot+facet_grid(~location)
 
-# Convert ggplot to plotly for interactivity
-plotly_plot <- ggplotly(location_plot)
 
-# Display the interactive plot
-plotly_plot  
 
-# Exclude rows where both rh and dewpoint are NA
-rich_data <- all_data %>% filter(!(is.na(rh) & is.na(dewpoint)))
+## Convert ggplot to plotly for interactivity THIS DOESN'T WORK
+#plotly_plot <- ggplotly(location_plot)
 
-# Plot relative humidity vs dewpoint with temperature as color, faceted by location
-ggplot(rich_data, aes(rh, dewpoint, color = temp)) +
-  geom_scattermore() +
-  scale_color_continuous(type = "viridis") +
-  facet_wrap(~ location) +
-  labs(title = "Relative Humidity vs Dewpoint by Location", x = "Relative Humidity", y = "Dewpoint")
+## Display the interactive plot
+#plotly_plot  
 
-# Filter data for a pair of locations
-comps <- c("MIF", "MIA")
+## Exclude rows where both rh and dewpoint are NA
+#rich_data <- all_data %>% filter(!(is.na(rh) & is.na(dewpoint)))
+
+## Plot relative humidity vs dewpoint with temperature as color, faceted by location
+#ggplot(rich_data, aes(rh, dewpoint, color = temp)) +
+#  geom_scattermore() +
+#  scale_color_continuous(type = "viridis") +
+#  facet_wrap(~ location) +
+#  labs(title = "Relative Humidity vs Dewpoint by Location", x = "Relative Humidity", y = "Dewpoint")
+
+# pick a couple of locations and a datetime range
+comps <- c("MIA", "MIB")
+date_range <- mdy_hms(c("1/05/2023 00:00:00", "2/25/2023 00:00:00" ))
+
 subset_data <- all_data %>%
   filter(location %in% comps) %>%
+  filter(datetime>=date_range[1] & datetime<=date_range[2])%>%
   select(datetime, temp, location) %>%
   mutate(datetime = floor_date(datetime, unit="hour"))
 
 # Pivot the data to have temperature values for each location in separate columns
-pivot_data <- subset_data %>%
+pivot_subset <- subset_data %>%
   pivot_wider(names_from = location, values_from = temp, values_fn = mean)
 
+
 # Calculate the temperature difference between the two locations
-pivot_data$temp_diff <- numeric(nrow(pivot_data))
-pivot_data[,"temp_diff"] <- pivot_data[,comps[1]] - pivot_data[,comps[2]]
+pivot_subset$temp_diff <- numeric(nrow(pivot_subset))
+pivot_subset[,"temp_diff"] <- pivot_subset[,comps[1]] - pivot_subset[,comps[2]]
+
+# Count the number of cold pools and total days in the daterange
+length(unique(floor_date(pivot_subset[pivot_subset$CAPevent == TRUE,]$datetime, 
+                      unit="days")))
+length(unique(floor_date(pivot_subset$datetime, unit="days")))
 
 # Plot time series of temperature differences between locations 
-ggplot(pivot_data, aes(x = datetime, y = temp_diff)) +
+ggplot(pivot_subset, aes(x = datetime, y = temp_diff)) +
   geom_line() +
   labs(title = paste0("Temperature Difference between ", comps[1], " and ", comps[2]), 
        x = "Datetime", y = paste0("Temperature Difference ", comps[1], " - ", comps[2]))
+
+print(pivot_subset[which(pivot_subset$temp_diff < (-5)), c("datetime", "temp_diff")], n=60)
+
+pivot_subset$CAPEvent2 <- pivot_subset$datetime %in% CAPTimes2
+pivot_subset$CAPEvent5 <- pivot_subset$datetime %in% CAPTimes5
 
 # Zoom out to hourly observations 
 hourly_data <- all_data %>%
   mutate(datetime = floor_date(datetime, unit="hour")) %>%
   group_by(datetime, location) %>%
   summarise(temp = mean(temp),
+            temp_lag0.5 = mean(temp_lag10),
             rh = mean(rh),
-            dewpoint = mean(dewpoint))
-
-comps <- c("CAS", "BAL")
-subset_data <- all_data %>%
-  filter(location %in% comps) %>%
-  select(datetime, temp, location) %>%
-  mutate(datetime = floor_date(datetime, unit="hour"))
-
-# Pivot the data to have temperature values for each location in separate columns
-pivot_data <- subset_data %>%
-  pivot_wider(names_from = location, values_from = temp, values_fn = mean)
-
-# Calculate the temperature difference between the two locations
-pivot_data$temp_diff <- numeric(nrow(pivot_data))
-pivot_data[,"temp_diff"] <- pivot_data[,comps[1]] - pivot_data[,comps[2]]
-
-# Plot time series of temperature differences between locations 
-ggplot(pivot_data, aes(x = datetime, y = temp_diff)) +
-  geom_line() +
-  labs(title = paste0("Temperature Difference between ", comps[1], " and ", comps[2]), 
-       x = "Datetime", y = paste0("Temperature Difference ", comps[1], " - ", comps[2]))
-
-print(pivot_data[which(pivot_data$temp_diff < (-5)), c("datetime", "temp_diff")], n=60)
-
-hourly_data$CAPevent <- hourly_data$datetime %in% pivot_data[which(pivot_data$temp_diff < (-5)), ]$datetime
+            dewpoint = mean(dewpoint),
+            CAPEvent2 = mean(CAPEvent2) > 0.5,
+            CAPEvent5 = mean(CAPEvent5) > 0.5)
 
 
-# Exclude rows where both rh and dewpoint are NA
-rich_hourly <- hourly_data %>% filter(!(is.na(rh) & is.na(dewpoint)))
-CAPevents <- rich_hourly[rich_hourly$CAPevent,]
-
-# Plot relative humidity vs dewpoint with CAP events highlighted, faceted by location
-ggplot(rich_hourly, aes(rh, dewpoint)) +
-  geom_point(alpha=0.2) +
-  geom_point(data = CAPevents, aes(rh, dewpoint, color=CAPevent))+
+ggplot(hourly_data, aes(x = rh, y = temp, size = diff_temp, alpha = diff_temp, color = CAPevent, shape = CAPevent)) +
+  geom_point() +
   facet_wrap(~ location) +
-  labs(title = "Relative Humidity vs Dewpoint by Location", x = "Relative Humidity", y = "Dewpoint")
+  scale_size_continuous(range = c(-16, 22)) +  # Adjust size range for better visibility
+  scale_alpha_continuous(range = c(0.1, 0.6)) +  # Adjust alpha transparency for better distinction
+  scale_color_manual(values = c("red", "blue")) +  # Custom colors for CAPevent categories
+  labs(
+    title = "Relative Humidity vs Temperature by Location",
+    x = "Relative Humidity (%)",
+    y = "Temperature (°C)"
+  ) +
+  theme_minimal() +  # Clean theme for better readability
+  theme(legend.position = "right")  # Position the legend on the right
+
+# I don't see any patterns, maybe R does
+
+# Logistic regression model
+
+log_reg1 <- glm(CAPEvent2~location*(temp+temp_lag0.5+rh), family=poisson(), data=hourly_data)
+summary(log_reg1)
